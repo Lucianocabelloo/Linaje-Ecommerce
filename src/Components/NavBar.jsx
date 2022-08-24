@@ -1,6 +1,5 @@
 import React from 'react'
 import "./Estilos.css";
-import "./img/home.png"
 import {FaBars, FaTimes} from "react-icons/fa";
 
 function NavBar() {
