@@ -1,0 +1,9 @@
+.carritoDiv{
+    display: flex;
+    padding: 6px;
+    margin-right: 2rem;
+    font-size: 2rem;
+    border: 2px #917f6ead solid;
+    border-radius: 10px;
+    color: #222;
+}

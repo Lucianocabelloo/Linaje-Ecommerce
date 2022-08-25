@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Estilos.css";
 import {FaBars, FaTimes} from "react-icons/fa";
+import CartWidget from './CartWidget/CartWidget';
 
 function NavBar() {
     return (
@@ -14,10 +15,13 @@ function NavBar() {
                 <li className='listaContainer_ul_li'><a className='listaContainer-ul_li_a' href="/#">Productos</a></li>
                 <li className='listaContainer_ul_li'><a className='listaContainer-ul_li_a' href="/#">Lugares</a></li>
             </ul>
-        <button className='boton'>
-                <FaTimes/>
-            </button>
+            <button className='boton'>
+                    <FaTimes/>
+                </button>
         </div>
+            <div className='carritoDeCompras'>
+                <CartWidget/>   
+            </div>
             <button className='boton'>
                 <FaBars/>
             </button>

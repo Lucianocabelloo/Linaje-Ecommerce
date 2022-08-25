@@ -1,26 +1,24 @@
 import "./App.css";
-import NavBar from "./Components/NavBar";
+import NavBar from "./Components/NavBar"
+import ItemListContainer from "./Containers/ItemListContainer";
 
 
 
 function App() {
 
-    let numeroDeClase = 40
-
   return (
     <>
+    <ItemListContainer greeting={"Bienvenidos a Linaje Argentino"}/>
     <NavBar/>
+    
+
+    <ItemListContainer novedades={"Novedades del Mes"}/>
+
+
     <div className="App">
-      {
-        <p style={
-          {
-            color: "salmon",
-            padding: "10px"
-          }
-        }>
-          Bienvenidos a la clase {numeroDeClase}</p>
-        }
     </div>
+
+
         </>
   );
 }

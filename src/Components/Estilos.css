@@ -6,6 +6,10 @@
     background-color: #efe1d1;
 }
 
+.header__logo{
+    display: flex;
+    align-items: center;
+}
 .listaContainer{
     margin: auto;
 }
