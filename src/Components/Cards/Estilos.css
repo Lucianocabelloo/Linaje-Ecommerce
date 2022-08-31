@@ -1,0 +1,17 @@
+.card{
+    display: flex;
+    text-align: center;
+}
+
+.Botones{
+    display: flex;
+    justify-content: center;
+}
+
+.Contador{
+    margin: 1rem;
+}
+
+.img{
+    object-fit: contain;
+}
