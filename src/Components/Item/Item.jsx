@@ -1,8 +1,9 @@
+import React from 'react'
+import "./Estilos.css"
 import Card from 'react-bootstrap/Card';
 import ItemCount from '../ItemCount/ItemCount';
-import "./Estilos.css";
 
-const Cards = () => {
+const Item = () => {
 
     const agregarAlCarrito = (cantidad) =>{
         console.log(`Se Agrego ${cantidad} al carrito`)
@@ -24,4 +25,4 @@ const Cards = () => {
 )
 }
 
-export default Cards
+export default Item;
