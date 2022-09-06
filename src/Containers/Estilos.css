@@ -3,3 +3,8 @@
     text-align: center;
     
 }
+
+.cardsConteiner{
+    display: flex;
+    flex-wrap: wrap;
+}

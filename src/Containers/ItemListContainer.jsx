@@ -33,7 +33,6 @@ useEffect(() => {
     return (
     <div>
         <h2 className='saludo'>{greeting}</h2>
-        <h2 className='novedades'>{novedades}</h2>
         <ItemList EnviarProductosItemList={productos}/>
     </div>
     )

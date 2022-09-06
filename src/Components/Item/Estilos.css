@@ -15,3 +15,8 @@
 .img{
     object-fit: contain;
 }
+
+.cardDescription{
+    height: 150px;
+    overflow: hidden ;
+}

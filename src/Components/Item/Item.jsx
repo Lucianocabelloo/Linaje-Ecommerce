@@ -12,12 +12,14 @@ console.log(productoAMostrar)
     return(
 <>
         <Card style={{ width: '18rem' }}>
-            <Card.Img className='img' variant="top" src="https://www.sinergiaindustrial.com.ar/images/146C645C28B442F3B32FBF41C0D331D5.jpg" />
+            <Card.Img className='img' variant="top" src={productoAMostrar.image} height={250} width={250}/>
                 <Card.Body>
-            <Card.Title>{productoAMostrar}</Card.Title>
+            <Card.Title>{productoAMostrar.title}</Card.Title>
+            <Card.Text className='cardDescription'>
+            {productoAMostrar.description}
+            </Card.Text>
             <Card.Text>
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+            ${productoAMostrar.price}
             </Card.Text>
                 </Card.Body>
                 <ItemCount initial={1} stock={5} onAdd={agregarAlCarrito}/>
