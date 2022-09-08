@@ -11,7 +11,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             
         }
         else{
-            console.warn("No Hay Stock")
+           // console.warn("No Hay Stock")
         }
     }
     
@@ -20,7 +20,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setCount(count - 1)
         }
         else{
-            console.warn("No podes bajar menos que 0")
+            //console.warn("No podes bajar menos que 0")
         }
     }
 
@@ -32,13 +32,13 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
 
     useEffect(() => {
-    console.info("Se monto el estado")
+    //console.info("Se monto el estado")
 
     }, [])
     
 
     useEffect(() => {
-        console.info("Se actualiza el estado")
+       // console.info("Se actualiza el estado")
     }, [count])
     
     

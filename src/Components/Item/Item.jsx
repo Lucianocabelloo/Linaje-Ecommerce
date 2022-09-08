@@ -5,9 +5,9 @@ import ItemCount from '../ItemCount/ItemCount';
 
 const Item = ({productoAMostrar}) => {
 
-console.log(productoAMostrar)
+//console.log(productoAMostrar)
     const agregarAlCarrito = (cantidad) =>{
-        console.log(`Se Agrego ${cantidad} al carrito`)
+        //console.log(`Se Agrego ${cantidad} al carrito`)
     }
     return(
 <>
