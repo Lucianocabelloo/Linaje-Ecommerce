@@ -1,14 +1,20 @@
 import React from 'react'
 import { useState,useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import Detail from '../../Components/Detail/Detail'
 
 
 const ItemDetailContainer = () => {
     const [productoIndiviual, setproductoIndiviual] = useState([])
 
+    const {productId} = useParams()
+
+    console.log(productId)
+
+
     useEffect(() => {
         (async () =>{
-            const obtenerUnProducto = await fetch('https://fakestoreapi.com/products/1')
+            const obtenerUnProducto = await fetch(`https://fakestoreapi.com/products/${productId}`);
         const Promesa = new Promise((resolve, reject) => {
             setTimeout(() => {
                 resolve(obtenerUnProducto.json())
@@ -26,7 +32,7 @@ const ItemDetailContainer = () => {
         // Aqui termina el tryCatch
         })()
 //Aqui termina Async
-    }, [])
+    }, [productId])
     // Aqui termina use efect
     
 
