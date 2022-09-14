@@ -1,11 +1,11 @@
 <h1 align="center">Hola 👋, Soy Luciano</h1>
 <h3 align="center">Un apasionado frontend developer de Tucuma, Argentina</h3>
 
-- Hola, Soy Luciano y actualmente estoy trabajando en [Linaje Argentino](https://github.com/Lucianocabelloo/Linaje-Ecommerce)
+- Hola, Soy Luciano y actualmente estoy trabajando en [Linaje Argentino](https://github.com/Lucianocabelloo/Linaje-Ecommerce), un proyecto elaborado en react, que consiste en un Eccomerce de ropa y accesorios en general.
 
-- Todos Mis proyectos estan en mi GitHub [https://github.com/Lucianocabelloo](https://github.com/Lucianocabelloo)
+- Mis proyectos estan en mi GitHub [https://github.com/Lucianocabelloo](https://github.com/Lucianocabelloo)
 
-<h3 align="left">Connect with me:</h3>
+<h3 align="left">Contacta conmigo:</h3>
 <p align="left">
 <a href="https://twitter.com/twitter.com/lucianocabelloo" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="twitter.com/lucianocabelloo" height="30" width="40" /></a>
 <a href="https://instagram.com/www.instagram.com/lucianocabelloo1/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/instagram.svg" alt="www.instagram.com/lucianocabelloo1/" height="30" width="40" /></a>
