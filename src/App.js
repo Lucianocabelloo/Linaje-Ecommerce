@@ -9,6 +9,8 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import ShopProvider from "./Components/Context/cartContext";
+import CartContainer from "./Containers/CartContainer/CartContainer";
 
 
 
@@ -18,17 +20,18 @@ function App() {
   return (
     <>
     <div className="App">
-      <BrowserRouter>
-      <NavBar/>
-      {/* <ItemListContainer greeting={"Bienvenidos a Linaje Argentino"}/> */}
-      {/* <ItemDetailContainer/> */}
-      <Routes>
-        <Route path="/" element={<ItemListContainer/>}/>
-        <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
-        <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
-        <Route path="*" element={<NotFound/>}/>
-      </Routes>
-      </BrowserRouter>
+      <ShopProvider>
+        <BrowserRouter>
+        <NavBar/>
+        <Routes>
+          <Route path="/" element={<ItemListContainer/>}/>
+          <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
+          <Route path="/detail/:productId" element={<ItemDetailContainer/>}/>
+          <Route path="/cart" element={<CartContainer/>}/>
+          <Route path="*" element={<NotFound/>}/>
+        </Routes>
+        </BrowserRouter>
+      </ShopProvider>
     </div>
     </>
         

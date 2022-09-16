@@ -29,8 +29,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         setCount(0)
     }
     const stockdispo = stock - count
-
-
+    
     useEffect(() => {
     //console.info("Se monto el estado")
 
@@ -48,7 +47,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <button onClick={add}>Agregar item</button>
         <button onClick={decrement}>Eliminar Item</button>
         <button onClick={addCart}>Agregar al carrito</button>
+
         <h2>Stock Disponible {stockdispo}</h2>
+        
     </div>
   )
 }
