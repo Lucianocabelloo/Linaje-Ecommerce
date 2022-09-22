@@ -9,7 +9,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-import ShopProvider from "./Components/Context/cartContext";
+import ShopProvider from "./Components/Context/CartContext";
 import CartContainer from "./Containers/CartContainer/CartContainer";
 
 

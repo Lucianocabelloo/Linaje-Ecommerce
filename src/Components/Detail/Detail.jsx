@@ -1,22 +1,31 @@
 import React from 'react'
+import { useContext } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Shop } from '../Context/CartContext';
 import ItemCount from '../ItemCount/ItemCount';
 import "./Estilos.css"
 
-const Detail = ({ProductoListo}) => {
-    const navigate = useNavigate()
-    const TerminarCompra = () =>{
-      navigate("./cart")
-    }
-    const [qty, setQty] = useState(0)
 
+const Detail = ({ProductoListo}) => {
+  
+  const { agregarItem} = useContext(Shop)
+  const [qty, setQty] = useState(0)
+
+    const navigate = useNavigate()
+    
+    
     const addCart = (quantity) => {
       setQty(quantity)
     }
-
+    
     console.log(qty)
-
+    
+    const TerminarCompra = () =>{
+      const productoGuardado = {...ProductoListo, quantity:qty};
+      agregarItem(productoGuardado);
+      navigate("../cart");
+    }
   return (
     <>
     <div>
