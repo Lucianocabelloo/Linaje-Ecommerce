@@ -12,17 +12,9 @@ const CartContext = ({children}) => {
     const [cart, setCart] = useState([])
 
 
-    const removeItem = (item) => {
-        const productoRepetido = existeEnElCarrito(item.id)
-        if(productoRepetido){
-            const itemAEliminar = cart.find(product => product.id === item.id)
-            const index = cart.indexOf(itemAEliminar)
-            cart.splice(index,1)
-            console.log(cart)        
-        }
-        else{
-            console.log('El item que se quiere eliminar no existe')
-        }
+    const removeItem = (itemABorrar) => {
+        const itemQueSeFiltra = cart.filter(item => item !== itemABorrar)
+        setCart(itemQueSeFiltra)
     }
 
     const limpiarCarrito = () =>{
@@ -50,7 +42,6 @@ const CartContext = ({children}) => {
             const cartModificado = [...cart, item]
             setCart(cartModificado)
         }
-        //Remover item
         
         
     }
