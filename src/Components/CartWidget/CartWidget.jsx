@@ -6,22 +6,23 @@ import { Shop } from '../Context/CartContext';
 import { useNavigate } from 'react-router-dom';
 
 const CartWidget = () => {
+  const navigate = useNavigate()
 
 const {cart} = useContext(Shop)
 
- const navigate = useNavigate()
+const cantidades = cart.map((producto) => producto.quantity)
+const cantTotal = cantidades.reduce((a,b) => a + b, 0)
 
- const moverme = () =>{
-  navigate("/cart")
- }
+const goCart = () =>{
+  navigate("./cart")
+}
+
 
   return (
     <> 
-    <div className='carritoDiv'>
-        <BsCartPlus onClick={moverme} className='carrito'/>
-    <span clas className={cart.length ? '' : '0'} >                 
-        {cart.length}                
-    </span>
+    <div  onClick={goCart} className='carritoDiv'>
+        <BsCartPlus className='carrito'/>
+    <span >{cart.length && cantTotal}</span>              
     </div>
     </>
   )

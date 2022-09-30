@@ -3,8 +3,11 @@ import "./Estilos.css";
 import {FaBars, FaTimes} from "react-icons/fa";
 import CartWidget from './CartWidget/CartWidget';
 import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { Shop } from './Context/CartContext';
 
 function NavBar() {
+    const {cart} = useContext(Shop)
     return (
     <header className='header'>
         <h2 className='header__logo'>Linaje</h2>
@@ -25,8 +28,8 @@ function NavBar() {
                     <FaTimes/>
                 </button>
         </div>
+        {cart.length ? <CartWidget /> : <></>}
             <div className='carritoDeCompras'>
-                <CartWidget/>   
             </div>
             <button className='boton'>
                 <FaBars/>

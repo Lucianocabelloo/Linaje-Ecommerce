@@ -1,7 +1,6 @@
 import React from 'react'
 import "./Estilos.css"
 import Card from 'react-bootstrap/Card';
-import ItemCount from '../ItemCount/ItemCount';
 import { useNavigate } from 'react-router-dom';
 
 const Item = ({productoAMostrar}) => {
@@ -10,9 +9,6 @@ const Item = ({productoAMostrar}) => {
         navigate(`/detail/${productoAMostrar.id}`)
     }
 //console.log(productoAMostrar)
-    const agregarAlCarrito = (cantidad) =>{
-        //console.log(`Se Agrego ${cantidad} al carrito`)
-    }
     return(
 <>
         <Card style={{ width: '18rem' }} onClick={handleNavigate}>
@@ -26,7 +22,6 @@ const Item = ({productoAMostrar}) => {
             ${productoAMostrar.price}
             </Card.Text>
                 </Card.Body>
-                <ItemCount initial={1} stock={5} onAdd={agregarAlCarrito}/>
         </Card>
         </>
 )

@@ -2,6 +2,8 @@ import React from 'react'
 import { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Detail from '../../Components/Detail/Detail'
+import { doc, getDoc } from "firebase/firestore";
+import { db } from '../../Firebase/config';
 
 
 const ItemDetailContainer = () => {
@@ -9,38 +11,29 @@ const ItemDetailContainer = () => {
 
     const {productId} = useParams()
 
-    console.log(productId)
-
-
     useEffect(() => {
         (async () =>{
-            const obtenerUnProducto = await fetch(`https://fakestoreapi.com/products/${productId}`);
-        const Promesa = new Promise((resolve, reject) => {
-            setTimeout(() => {
-                resolve(obtenerUnProducto.json())
-            }, 2000);
-            // Aqui termina Settimeout
             
-        })
-        try {
-            const productoIndividualObtenido = await Promesa
-            setproductoIndiviual(productoIndividualObtenido)
-            console.log(productoIndividualObtenido)
+            try {
+            const docRef = doc(db, "products", productId);
+            const docSnap = await getDoc(docRef);
+            docSnap.exists 
+            ? setproductoIndiviual({id:docSnap.id , ...docSnap.data()})
+            :
+            alert("No se encontro el producto!");
+            
         } catch (error) {
             console.log(error)
         }
-        // Aqui termina el tryCatch
         })()
-//Aqui termina Async
-    }, [productId])
-    // Aqui termina use efect
-    
 
-  return (
-    <div>
-            {<Detail ProductoListo={productoIndiviual}/> }
-    </div>
-  )
+    }, [productId])
+
+    return (
+        <div>
+                {<Detail ProductoListo={productoIndiviual}/> }
+        </div>
+    )
 }
 
 export default ItemDetailContainer
