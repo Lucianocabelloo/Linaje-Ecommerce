@@ -3,16 +3,24 @@ import { useContext } from 'react'
 import { useNavigate } from "react-router-dom";
 import { Shop } from '../../Components/Context/CartContext'
 import "./Estilos.css";
+import generarOrden from '../../Services/generarOrden';
 
 
 
 const CartContainer = () => {
 
-  const {cart,removeItem,limpiarCarrito} = useContext(Shop)
+  const {cart,removeItem,limpiarCarrito,total} = useContext(Shop)
   const navigate = useNavigate()
 
     const returnHome = () => {
         navigate('/')}
+
+
+        const confirmarCompra = () =>{
+            const importe = total()
+            const generar = generarOrden("Luciano", "luciano23@gmail.com", 3815172093, cart, importe,new Date().toLocaleString());
+            console.log(generar)
+        }
 
         return(
             cart.length ?
@@ -26,6 +34,7 @@ const CartContainer = () => {
                             <th className='Titulos'>Precio unitario</th>
                             <th className='Titulos'>Precio Total</th>
                             <th><button className='remove-btn' onClick={limpiarCarrito}>Limpiar Carrito</button></th>      
+                            <th><button className='total-btn' onClick={confirmarCompra}>Confirmar Compra</button></th>      
                         </tr>
                     </thead>
                     {

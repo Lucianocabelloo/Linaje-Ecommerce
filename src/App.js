@@ -11,11 +11,19 @@ import {
 } from "react-router-dom";
 import ShopProvider from "./Components/Context/CartContext";
 import CartContainer from "./Containers/CartContainer/CartContainer";
+// import { useEffect } from "react";
+// import { algoritmoGuardadoAutomático } from "./Services/guardarProductos";
 
 
 
 
 function App() {
+
+  // useEffect(() => {
+  //   algoritmoGuardadoAutomático()
+  //   console.log("se deberia ejecutar 1 vez")
+  // },[])
+  
 
   return (
     <>

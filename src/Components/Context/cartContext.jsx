@@ -11,6 +11,10 @@ const CartContext = ({children}) => {
     
     const [cart, setCart] = useState([])
 
+    const total = () =>{
+        const total = cart.reduce((acc, producto) => acc += producto.quantity * producto.price, 0)
+        return total
+    }
 
     const removeItem = (itemABorrar) => {
         const itemQueSeFiltra = cart.filter(item => item !== itemABorrar)
@@ -43,11 +47,10 @@ const CartContext = ({children}) => {
             setCart(cartModificado)
         }
         
-        
     }
     return (
 
-        <Shop.Provider value={{cart,agregarItem,removeItem,limpiarCarrito}}>
+        <Shop.Provider value={{cart,agregarItem,removeItem,limpiarCarrito,total}}>
             {children}
         </Shop.Provider>
     )
