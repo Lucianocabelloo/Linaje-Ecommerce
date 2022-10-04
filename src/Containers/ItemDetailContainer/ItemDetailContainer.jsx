@@ -32,8 +32,9 @@ const ItemDetailContainer = () => {
     return (
         <div>
             {
-                productoIndiviual.length ? <Detail ProductoListo={productoIndiviual}/> 
-                : <h2>Loading...</h2>
+                productoIndiviual.length ? <h2>Loading...</h2>
+                
+                : <Detail ProductoListo={productoIndiviual}/> 
             }
         </div>
     )

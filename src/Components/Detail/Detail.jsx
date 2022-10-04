@@ -8,7 +8,8 @@ import "./Estilos.css"
 
 
 const Detail = ({ProductoListo}) => {
-  
+
+
   const { agregarItem} = useContext(Shop)
   const [qty, setQty] = useState(0)
 
@@ -37,10 +38,10 @@ const Detail = ({ProductoListo}) => {
         <h3>{ProductoListo.description}</h3>
         
         
-        {qty ? <button onClick={TerminarCompra}>Finalizar Compra</button>
-        : <ItemCount initial={1} stock={5} onAdd={addCart}/>}
 
         </div>
+        {qty ? <button onClick={TerminarCompra}>Finalizar Compra</button>
+        : <ItemCount initial={1} stock={5} onAdd={addCart}/>}
         </div>
     </div>
     </>
