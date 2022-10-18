@@ -11,7 +11,7 @@ const ItemListContainer = ({greeting,novedades}) => {
 
     const [productos, setproductos] = useState([])
 
-//    console.log(db)
+
 
     const {categoryId} = useParams();
     
@@ -23,7 +23,7 @@ useEffect(() => {
                 const q = categoryId ? query(collection(db, "products"),where("category", "==", categoryId) )
                                     : query(collection(db, "products"))
                 const productosFirebase = [];
-                console.log(productosFirebase)
+
                 const querySnapshot = await getDocs(q);
                 
                 querySnapshot.forEach((doc) => {
@@ -32,7 +32,7 @@ useEffect(() => {
                 });
                 setproductos(productosFirebase)
         } catch (error) {
-            console.log("No se pudieron traer los objetos")
+
         }    
     })()
 
@@ -43,7 +43,7 @@ useEffect(() => {
 
 
     return (
-    <div>
+    <div className='container'>
         <h2 className='saludo'>{greeting}</h2>
         <ItemList EnviarProductosItemList={productos}/>
     </div>

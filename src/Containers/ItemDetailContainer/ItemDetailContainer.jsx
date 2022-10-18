@@ -3,12 +3,14 @@ import { useState,useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Detail from '../../Components/Detail/Detail'
 import { doc, getDoc } from "firebase/firestore";
+import "./Estilos.css"
 import { db } from '../../Firebase/config';
+import { AtomSpinner } from 'react-epic-spinners'
 
 
 const ItemDetailContainer = () => {
     const [productoIndiviual, setproductoIndiviual] = useState([])
-
+    const [loading, setLoading] = useState(true);
     const {productId} = useParams()
 
     useEffect(() => {
@@ -21,9 +23,9 @@ const ItemDetailContainer = () => {
             ? setproductoIndiviual({id:docSnap.id , ...docSnap.data()})
             :
             alert("No se encontro el producto!");
-            
-        } catch (error) {
-            console.log(error)
+            setLoading(false)
+        } 
+        catch (error) {
         }
         })()
 
@@ -32,9 +34,12 @@ const ItemDetailContainer = () => {
     return (
         <div>
             {
-                productoIndiviual.length ? <h2>Loading...</h2>
+                loading ?  <div className='loading'>
+                <AtomSpinner color="black"><h2>Loading</h2></AtomSpinner>
+                </div>
                 
-                : <Detail ProductoListo={productoIndiviual}/> 
+                
+                : <Detail ProductoListo={productoIndiviual}/>
             }
         </div>
     )

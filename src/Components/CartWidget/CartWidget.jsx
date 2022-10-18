@@ -24,6 +24,7 @@ const goCart = () =>{
         <BsCartPlus className='carrito'/>
     <span >{cart.length && cantTotal}</span>              
     </div>
+    
     </>
   )
 }

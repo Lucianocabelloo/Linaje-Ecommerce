@@ -8,9 +8,10 @@ import { Shop } from './Context/CartContext';
 
 function NavBar() {
     const {cart} = useContext(Shop)
+    
     return (
     <header className='header'>
-        <h2 className='header__logo'>Linaje</h2>
+        <h2 className='header__logo'>Linaje Tucumano</h2>
         <div className='listaContainer'>
             <ul className='listaContainer_ul'>
                 <li className='listaContainer_ul_li'><Link className='listaContainer-ul_li_a' to='/'>Home</Link></li>

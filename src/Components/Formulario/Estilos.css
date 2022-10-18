@@ -1,0 +1,10 @@
+.formulario{
+    min-height: 75vh !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form{
+    width: 50vh;
+}

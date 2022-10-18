@@ -7,7 +7,7 @@ import { AtomSpinner } from 'react-epic-spinners'
 const ItemList = ({EnviarProductosItemList}) => {
   return (
     <>
-    <div className='cardConteiner'>
+    <div className='p-5 cardConteiner'>
         {EnviarProductosItemList.length ? EnviarProductosItemList.map(ProductoRecibidoListContainer =>{
           return <Item key={ProductoRecibidoListContainer.id} productoAMostrar={ProductoRecibidoListContainer}/>
         })

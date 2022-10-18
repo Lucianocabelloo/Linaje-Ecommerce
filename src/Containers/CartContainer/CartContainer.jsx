@@ -3,13 +3,13 @@ import { useContext } from 'react'
 import { useNavigate } from "react-router-dom";
 import { Shop } from '../../Components/Context/CartContext'
 import "./Estilos.css";
-import generarOrden from '../../Services/generarOrden';
+
 
 
 
 const CartContainer = () => {
 
-  const {cart,removeItem,limpiarCarrito,total} = useContext(Shop)
+  const {cart,removeItem,limpiarCarrito} = useContext(Shop)
   const navigate = useNavigate()
 
     const returnHome = () => {
@@ -17,12 +17,11 @@ const CartContainer = () => {
 
 
         const confirmarCompra = () =>{
-            const importe = total()
-            const generar = generarOrden("Luciano", "luciano23@gmail.com", 3815172093, cart, importe,new Date().toLocaleString());
-            console.log(generar)
+            navigate("/Formulario")
         }
 
         return(
+
             cart.length ?
             <div className="container">
                 <table>
@@ -32,9 +31,8 @@ const CartContainer = () => {
                             <th className='Titulos'>Producto</th>
                             <th className='Titulos'>Titulo</th>
                             <th className='Titulos'>Precio unitario</th>
-                            <th className='Titulos'>Precio Total</th>
-                            <th><button className='remove-btn' onClick={limpiarCarrito}>Limpiar Carrito</button></th>      
-                            <th><button className='total-btn' onClick={confirmarCompra}>Confirmar Compra</button></th>      
+                            <th className='Titulos'>Precio Total</th>   
+                            <th><button className='total-btn btn btn-primary' onClick={confirmarCompra}>Confirmar Compra</button></th>      
                         </tr>
                     </thead>
                     {
@@ -51,21 +49,24 @@ const CartContainer = () => {
                                         <td>$ {item.price}</td>
                                         <td>$ {(item.quantity * item.price).toFixed(2)}</td>                                    
                                         <td>
-                                        <button className='remove-btn' onClick={eliminarItem}>Eliminar Item</button>
+                                        <button className='remove-btn btn btn-danger' onClick={eliminarItem}>Eliminar Item</button>
                                         </td>
                                     </tr>
                                 </tbody>
                             )
                         })
                     }
+                    <button className='remove-btn btn btn-danger limpiar' onClick={limpiarCarrito}>Limpiar Carrito</button>
                 </table>
             </div>
             :
-            <div className="empty">
+            <div className="vacio">
                 <h2>No se encuentran items dentro del carrito</h2>
-                <button className="btn-return" onClick={returnHome}>Volver al inicio</button>
+                <button className="btn-return btn btn-primary" onClick={returnHome}>Volver al inicio</button>
             </div>
         )
+        
     }
 
-    export default CartContainer
+
+    export default CartContainer                 

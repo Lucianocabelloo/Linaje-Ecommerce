@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, {useState } from 'react'
 import "./Estilos.css"
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
 
 const ItemCount = ({stock, initial, onAdd}) => {
-
+    
     const [count, setCount] = useState(initial)
+    const MySwal = withReactContent(Swal);
     
     const add = () =>{
         if (count < stock) {    
@@ -11,7 +15,15 @@ const ItemCount = ({stock, initial, onAdd}) => {
             
         }
         else{
-           // console.warn("No Hay Stock")
+            MySwal.fire({
+                icon: 'warning',
+                position:'top',
+                title: <p>No hay mas productos en stock</p>,
+                onOpen: () => {
+                    setTimeout(() => MySwal.clickConfirm(), 1000);
+                  }
+                });
+
         }
     }
     
@@ -20,7 +32,14 @@ const ItemCount = ({stock, initial, onAdd}) => {
             setCount(count - 1)
         }
         else{
-            //console.warn("No podes bajar menos que 0")
+            MySwal.fire({
+                icon: 'warning',
+                position:'top',
+                title: <p>No podes bajar menos a 0</p>,
+                onOpen: () => {
+                    setTimeout(() => MySwal.clickConfirm(), 1000);
+                }
+                });
         }
     }
 
@@ -30,25 +49,19 @@ const ItemCount = ({stock, initial, onAdd}) => {
     }
     const stockdispo = stock - count
     
-    useEffect(() => {
-    //console.info("Se monto el estado")
 
-    }, [])
-    
-
-    useEffect(() => {
-       // console.info("Se actualiza el estado")
-    }, [count])
     
     
     return (
     <div className='ocultar'>
-        <h2>{count}</h2>
-        <button onClick={add}>Agregar item</button>
-        <button onClick={decrement}>Eliminar Item</button>
-        <button onClick={addCart}>Agregar al carrito</button>
+        <div className='botones'>
+        <button className='btn btn-primary' onClick={add}>Agregar item</button>
+        <button className='btn btn-danger' onClick={decrement}>Eliminar Item</button>
+        <button className='btn btn-secondary' onClick={addCart}>Agregar al carrito</button>
+        </div>
 
-        <h2>Stock Disponible {stockdispo}</h2>
+        <h2>Cantidad a comprar {count}</h2>
+        <h5>Stock Disponible {stockdispo}</h5>
         
     </div>
   )

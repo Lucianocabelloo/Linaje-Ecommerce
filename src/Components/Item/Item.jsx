@@ -8,7 +8,7 @@ const Item = ({productoAMostrar}) => {
     const handleNavigate = () =>{
         navigate(`/detail/${productoAMostrar.id}`)
     }
-//console.log(productoAMostrar)
+
     return(
 <>
         <Card style={{ width: '18rem' }} onClick={handleNavigate}>
