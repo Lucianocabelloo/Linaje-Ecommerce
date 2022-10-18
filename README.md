@@ -17,4 +17,4 @@
 
  Prueba de funcionamiento
 
-[![Alt text](https://img.youtube.com/vi/9XokjB4qg9E/0.gif)](https://www.youtube.com/watch?v=9XokjB4qg9E)
+[![Alt text](https://img.youtube.com/vi/9XokjB4qg9E/0.jpg)](https://www.youtube.com/watch?v=9XokjB4qg9E)
