@@ -1,5 +1,5 @@
 <h1 align="center">Hola 👋, Soy Luciano</h1>
-<h3 align="center">Un apasionado frontend developer de Tucuman, Argentina</h3>
+<h3 align="center">Un apasionado frontend developer de San Miguel de Tucuman, Argentina,</h3>
 
 - Hola, Soy Luciano y actualmente estoy trabajando en [Linaje Argentino](https://github.com/Lucianocabelloo/Linaje-Ecommerce), un proyecto elaborado en react, que consiste en un Eccomerce de ropa y accesorios en general.
 
