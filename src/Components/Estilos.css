@@ -44,3 +44,26 @@
 .boton{
     display: none;
 }
+
+
+@media screen and (max-width: 1120px) {
+    .header{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .listaContainer_ul{
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .listaContainer-ul_li_a{
+        border: none;
+    }
+    .listaContainer_ul_li{
+        display: flex;
+        justify-content: center;
+        align-items: cent;
+    }
+}
